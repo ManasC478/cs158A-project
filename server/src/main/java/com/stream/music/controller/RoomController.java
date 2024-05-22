@@ -35,6 +35,7 @@ public class RoomController {
 
     @GetMapping(value = {"", "/"})
     public ResponseEntity<Response> getRooms() {
+        System.out.println("Get Rooms");
         Iterable<Room> rooms = userRepository.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(new SuccessResponse<Iterable<Room>>(rooms));
     }
@@ -44,7 +45,7 @@ public class RoomController {
         
         try {
             userRepository.deleteById(roomID);
-            return ResponseEntity.status(HttpStatus.CREATED).body(new SuccessResponse<Object>(null));
+            return ResponseEntity.status(HttpStatus.CREATED).body(new SuccessResponse<Room>(new Room()));
         } catch (IllegalStateException e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(new ResponseException(e.getMessage(), e.getCause().getMessage())));

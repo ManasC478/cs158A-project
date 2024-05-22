@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stream.controller.OwnerRoomController">
+   <children>
+      <Button fx:id="redirectHome" mnemonicParsing="false" onAction="#redirectHome" text="Go to Home" />
+      <Label fx:id="redirectHomeWarning" text="Error redirecting to home" visible="false" style="-fx-text-fill: red;"  />
+      <Label fx:id="roomName" text="" />
+      <Button fx:id="uploadFileBtn" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#uploadFile" text="Choose MP3" />
+      <Label fx:id="selectFile" text="" />
+      <Label fx:id="fileWarning" text="File must be an mp3 file" visible="false" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Button fx:id="playBtn" mnemonicParsing="false" onAction="#play" text="Play" />
+            <!-- <Button fx:id="pauseBtn" mnemonicParsing="false" onAction="#pause" text="Pause" disable="true" /> -->
+         </children>
+      </HBox>
+   </children>
+</VBox>
